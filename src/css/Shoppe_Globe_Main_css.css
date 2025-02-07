@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+.logo{
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    background-color: hsl(251, 97.40%, 14.90%);
+    color: white;
+}
+
+.navbar{
+    width: 100%;
+    border: 2px solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.navlist{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding: .5rem;
+}
+
+.navlist > li{
+    border: 2px solid brown;
+}
+
+.Cart{
+    display: flex;
+    align-self: center;
+    position: absolute;
+    right: 12em;
+    border: 2px solid gold;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    padding: .5rem;
+}
+
+
+.btn{
+    @apply w-[2.2rem] h-[2.4rem] font-extrabold bg-blue-300 rounded;
+}
+
+.btn:nth-child(2){
+    @apply bg-green-500 border-2 text-white border-black;
+}
+
+.btn > span{
+    @apply text-2xl;
+}
