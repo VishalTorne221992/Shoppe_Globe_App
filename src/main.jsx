@@ -12,10 +12,11 @@ import ProductDetailError from './components/ProductDetailError.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
 import Checkout from './components/Checkout.jsx';
 
-
+// enable lazy loading for the some components
 const About = lazy(() => import('./components/About.jsx'));
 const Contact = lazy(() => import('./components/Contact.jsx'))
 
+// defining routes for the application
 const appRouter = createBrowserRouter([
   {
     path:"/",

@@ -12,6 +12,8 @@ function ProductCard(props) {
 
   function handleAddItem() {
 
+    // check if items is already added to the cart we have to search in cartitem
+    // which we obtain from state (redux)
     let foundItem = CartItems.filter(prod => prod.id === props.cat_products.id);
 
     if (foundItem.length !== 0) {
@@ -19,6 +21,7 @@ function ProductCard(props) {
       return
     }
 
+    // add new item to cart
     let newItem = {
       id: props.cat_products.id,
       sname: props.cat_products.title,
@@ -28,6 +31,8 @@ function ProductCard(props) {
       ItemTotalPrice: props.cat_products.price
     }
 
+    // dispatch the functions to redux reducers to additem to cart and update total price
+    
     dispatch(addCartItem(newItem))
     dispatch(updateTotalPrice(props.cat_products.price))
 

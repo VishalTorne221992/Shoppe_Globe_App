@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { useFetch } from "./useFetch";
 
 
-// Define the async thunk for fetching user data
+// Define the async thunk for fetching products and category data
 export const fetchProductsData = createAsyncThunk('products/fetchProductsData', async () => {
     const response = await fetch('https://dummyjson.com/products');
     const jsonData = await response.json();

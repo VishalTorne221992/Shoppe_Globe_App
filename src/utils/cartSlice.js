@@ -1,5 +1,8 @@
 import { createSlice, current } from '@reduxjs/toolkit';
 
+
+// using slices to manage the state of the cart like adding, updating and deleting
+// of items
 const cartSlice = createSlice({
     name: 'Cart',
     initialState : {

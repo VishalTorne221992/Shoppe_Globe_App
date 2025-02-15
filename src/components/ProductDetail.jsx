@@ -17,13 +17,17 @@ function ProductDetail() {
       return localProducts.products;
     }
 
+    // Get products from the catalog of redux
     let ProductsData = useSelector(store => store.catalog.products);
   
+    // Get products or get it from local storages
     let products = ProductsData.products || getProducts();
 
     console.log('products',products)
 
     useEffect(() => {
+
+      // get the product only when there is change only in params id
       const findProducts = () => {
 
         let productsofCategory = products.filter(p => {

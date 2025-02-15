@@ -10,7 +10,8 @@ export const CartPopup = () => {
     let localcart = JSON.parse(localStorage.getItem('cart'))
     return localcart
   }
-
+  
+  // Get cartitems from the cartslice of redux
   let CartItems = useSelector(state => state.Cart.items) || getlocalCart()
   let CartTotalPrice = useSelector(state => state.Cart.Total_Price)
   

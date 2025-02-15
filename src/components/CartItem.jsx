@@ -12,6 +12,7 @@ function CartItem(props) {
 
   function handleInc() {
 
+    // dispatch increment quantity function increment quantity of cart item
     dispatch(updateQuantityIncrement(props.Cart.id))
     dispatch(updateTotalPrice(props.Cart.price))
 
@@ -19,6 +20,7 @@ function CartItem(props) {
 
   function handleDec() {
 
+    // dispatch decrement quantity function decrement quantity of cart item
     dispatch(updateQuantityDecrement(props.Cart.id))
     dispatch(DecTotalPrice(props.Cart.price))
 
@@ -26,8 +28,10 @@ function CartItem(props) {
 
   function handleDeleteItem() {
 
+    // deduct the amount added by the deleted product from cart
     let itemTotalPrice = props.Cart.quantity * props.Cart.price;
 
+    // dispatch functions to delete item from cart and update total price
     dispatch(DecTotalPrice(itemTotalPrice))
     dispatch(DeleteItem(props.Cart.id))
   }

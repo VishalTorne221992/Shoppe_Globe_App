@@ -4,6 +4,7 @@ import CategoryCard from './CategoryCard';
 
 function MainCategories() {
 
+    // Get category and products from the catalogslice
     let ProductsData = useSelector(store => store.catalog.products);
     let categories = useSelector(store => store.catalog.categories);
 
