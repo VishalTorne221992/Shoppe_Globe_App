@@ -6,6 +6,7 @@ import { useFetch } from "./useFetch";
 export const fetchProductsData = createAsyncThunk('products/fetchProductsData', async () => {
     const response = await fetch('https://dummyjson.com/products');
     const jsonData = await response.json();
+    localStorage.setItem('products',JSON.stringify(jsonData))
     return jsonData;
   });
 
@@ -14,6 +15,8 @@ export const fetchProductsData = createAsyncThunk('products/fetchProductsData', 
     const jsonData = await response.json();
     return jsonData;
   });
+
+
 
 const catalogSlice = createSlice({
     name: 'catalog',

@@ -7,6 +7,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error from './components/Error.jsx'
 import MainCategories from './components/MainCategories'
 import Cat_ProductsPage from './components/Cat_ProductsPage.jsx';
+import CartPage from './components/CartPage.jsx';
+import ProductDetailError from './components/ProductDetailError.jsx';
+import ProductDetail from './components/ProductDetail.jsx';
+import Checkout from './components/Checkout.jsx';
 
 
 const About = lazy(() => import('./components/About.jsx'));
@@ -31,9 +35,22 @@ const appRouter = createBrowserRouter([
         element: <Suspense fallback={<div>Loading.....</div>}><Contact/></Suspense>
       },
       {
+        path:"/Cart",
+        element: <CartPage />
+      },
+      {
         path:"/category/:name",
-        element: <Cat_ProductsPage />
-      }
+        element: <Cat_ProductsPage />,
+      },
+      {
+        path:"/category/:name/:id",
+        element: <ProductDetail />,
+        errorElement: <ProductDetailError />
+      },
+      {
+        path:"/Cart/checkout",
+        element: <Checkout />
+      },
     ]
   }
 ])

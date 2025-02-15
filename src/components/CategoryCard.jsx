@@ -5,10 +5,10 @@ function CategoryCard(props) {
   
   return (
     <>
-      <div className='card border-2 flex flex-col'>
+      <div className='card flex flex-col justify-center items-center shadow-sm shadow-black @min-5xl/main_cat:w-[20em]'>
           <Link to={`/category/${props.category}`} style={{textDecoration:'none', cursor:'auto'}}>
-          <img className='object-cover w-72 h-56' src={`/public/${props.category}.jpg`} alt=""/>
-          <h1>{props.category}</h1>
+          <img className='object-cover w-72 h-56' src={`/${props.category}.jpg`} alt=""/>
+          <h1 className='text-center font-bold capitalize text-xl '>{props.category}</h1>
           </Link>
       </div>
     </>

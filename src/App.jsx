@@ -29,10 +29,10 @@ function App() {
   
   
   return (
-    <>
+    <div className='main'>
       <Header />
       <Outlet />
-    </>
+    </div>
   )
 }
 

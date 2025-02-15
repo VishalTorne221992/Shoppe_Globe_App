@@ -3,16 +3,29 @@ import React, { useState,useEffect } from 'react'
 export function useFetch(url) {
 
     const [data, setData] = useState([])
+    const [error,setError] = useState(null)
 
     useEffect(() => {
 
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setData(data));
+      const fetchapi = async() => {
+
+        try {
+
+          const response = await fetch(url);
+          const res = await response.json();
+          setData(res)
+          
+        } catch (error) {
+          setError(error)
+        }
+
+      }
+
+      fetchapi();
         
     }, [url])
 
-  return data;
+  return {data, error};
   
 }
 

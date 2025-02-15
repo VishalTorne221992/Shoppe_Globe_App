@@ -10,7 +10,7 @@ function MainCategories() {
     let products = ProductsData.products;
 
   return (
-    <div className='flex justify-center items-center flex-wrap gap-3 mt-6'>
+    <div className='@container/main_cat flex justify-center items-center flex-wrap gap-8 mt-6 m-3'>
        {categories && categories.map(category => {
         return <CategoryCard key={category} category={category}/>
        }
