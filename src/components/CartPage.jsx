@@ -4,8 +4,13 @@ import { useSelector } from 'react-redux'
 import CartItem from './CartItem'
 
 function CartPage() {
+
+  function getlocalCart(){
+    let localcart = JSON.parse(localStorage.getItem('cart'))
+    return localcart
+  }
                
-  let CartItems = useSelector(state => state.Cart.items)
+  let CartItems = useSelector(state => state.Cart.items) || getlocalCart()
   let CartTotalPrice = useSelector(state => state.Cart.Total_Price)
 
   console.log('cartitems view', CartItems)

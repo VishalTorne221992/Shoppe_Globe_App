@@ -6,7 +6,12 @@ import CartItem from './CartItem'
 
 export const CartPopup = () => {
 
-  let CartItems = useSelector(state => state.Cart.items)
+  function getlocalCart(){
+    let localcart = JSON.parse(localStorage.getItem('cart'))
+    return localcart
+  }
+
+  let CartItems = useSelector(state => state.Cart.items) || getlocalCart()
   let CartTotalPrice = useSelector(state => state.Cart.Total_Price)
   
 
