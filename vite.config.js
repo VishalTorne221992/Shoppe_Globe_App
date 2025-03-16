@@ -15,6 +15,9 @@ export default defineConfig({
     },
   },
   server: {
+    host: true,
+    strictPort: true,
+    port: 8000,
     proxy: {
       "/api": "https://shoppe-globe-app.onrender.com/",
     },
