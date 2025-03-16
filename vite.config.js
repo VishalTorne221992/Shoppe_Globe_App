@@ -23,6 +23,7 @@ export default defineConfig({
       "/api": {
         target : "https://shoppe-globe-app.onrender.com",
         changeOrigin : true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
         secure : false,
       },
     },
