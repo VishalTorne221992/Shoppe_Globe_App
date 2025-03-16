@@ -21,7 +21,7 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       "/api": {
-        target : "https://shoppe-globe-app.onrender.com/",
+        target : "https://shoppe-globe-app.onrender.com",
         changeOrigin : true,
         secure : false,
       },
