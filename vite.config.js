@@ -18,8 +18,13 @@ export default defineConfig({
     host: true,
     strictPort: true,
     port: 8000,
+    allowedHosts: ['https://shoppe-globe-app.onrender.com'],
     proxy: {
-      "/api": "https://shoppe-globe-app.onrender.com/",
+      "/api": {
+        target : "https://shoppe-globe-app.onrender.com/",
+        changeOrigin : true,
+        secure : false,
+      },
     },
   },
 })
