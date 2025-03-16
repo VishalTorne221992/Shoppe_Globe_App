@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { useFetch } from "/src/utils/useFetch"
 import { useDispatch, useSelector } from 'react-redux'
 import { Outlet } from "react-router-dom"
-import {fetchProductsData, fetchCategoriesData} from './utils/catalogSlice.js'
-
+import {fetchProductsData} from './utils/catalogSlice.js'
+import { ToastContainer , toast} from 'react-toastify'
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   let dispatch = useDispatch();
 
   useEffect(() => {
-     dispatch(fetchCategoriesData());
+     //dispatch(fetchCategoriesData());
      dispatch(fetchProductsData());
   },[dispatch]);
 
@@ -32,6 +32,7 @@ function App() {
     <div className='main'>
       <Header />
       <Outlet />
+      <ToastContainer />
     </div>
   )
 }

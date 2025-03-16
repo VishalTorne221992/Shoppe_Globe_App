@@ -7,7 +7,8 @@ function ProductDetail() {
 
     const params = useParams();
     
-    let id = parseInt(params.id)
+    let id = params.id;
+   
     let dispatch = useDispatch();
 
     const [details, setDetails] = useState()
@@ -21,7 +22,7 @@ function ProductDetail() {
     let ProductsData = useSelector(store => store.catalog.products);
   
     // Get products or get it from local storages
-    let products = ProductsData.products || getProducts();
+    let products = ProductsData || getProducts();
 
     console.log('products',products)
 
@@ -42,7 +43,7 @@ function ProductDetail() {
   
       const cat_Products = findProducts();
   
-      const productDetail = cat_Products.filter(c => c.id === id)
+      const productDetail = cat_Products.filter(c => c._id === id)
 
       setDetails(productDetail[0])
 

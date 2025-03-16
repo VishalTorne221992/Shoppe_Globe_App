@@ -2,7 +2,7 @@
 
 @theme{
     --container-xss:20rem;
-    --container-xs:21rem;
+    --container-xs:24rem;
     --container-smx:31rem;
     --container-md:40rem;
     --container-mdx:41rem;
@@ -13,7 +13,12 @@
     font-family: "Alfa Slab One", serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 1.5rem;
+    background-color: hsl(251, 97.40%, 14.90%);
+    color: white;
+}
+
+.logo_header{
+    font-family: "Alfa Slab One", serif;
     background-color: hsl(251, 97.40%, 14.90%);
     color: white;
 }
@@ -34,9 +39,6 @@
     font-weight: bolder;
 }
 
-.navlist > li{
-}
-
 .Cart{
     display: flex;
     align-self: center;
@@ -46,15 +48,3 @@
     border-radius: .5rem;
 }
 
-
-/* .btn{
-    @apply w-[2.2rem] h-[2.4rem] font-extrabold bg-blue-300 rounded;
-}
-
-.btn:nth-child(2){
-    @apply bg-green-500 border-2 text-white border-black;
-}
-
-.btn > span{
-    @apply text-2xl;
-} */

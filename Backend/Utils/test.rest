@@ -1,0 +1,39 @@
+POST http://localhost:4002/api/cart
+Content-Type: application/json
+
+{
+    "userID" : "user302",
+    "item_id" : "104",
+    "title" : "pepe jeans",
+    "product_image" : "images/pepejeans",
+    "price" : 1350.00,
+    "quantity" : 1,
+    "ItemTotalPrice" : 1350.00,
+    "CartTotal": 1350.00
+}
+
+###
+
+PUT http://localhost:4002/api/cart/104
+Content-Type: application/json
+
+{
+    "userID" : "user302",
+    "operation" : "decrement",
+    "itemPrice" : 1350.00
+}
+
+###
+
+GET http://localhost:4002/api/cart
+
+###
+
+DELETE http://localhost:4002/api/cart/101
+Content-Type: application/json
+
+{
+    "userID" : "user301",
+    "ItemTotalPrice" : 250.00
+}
+

@@ -1,0 +1,13 @@
+POST http://localhost:4002/api/user
+Content-Type: application/json
+
+{
+    "Firstname" : "Vishal",
+    "Lastname" : "Torne",
+    "Email" : "vt@gmail.com",
+    "Password" : "happy"
+}
+
+####
+
+GET http://localhost:4002/api/products

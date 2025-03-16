@@ -13,12 +13,12 @@ function Cat_ProductsPage() {
   const [filtered, setFiltered] = useState(Category_Products);
   const [searchFlag, setSearchFlag] = useState(false);
 
-  const { data, error } = useFetch(`https://dummyjson.com/products/category/${cat_name}`);
+  const { data, error } = useFetch(`http://localhost:4002/api/category/${cat_name}`);
 
-
+ 
   useEffect(() => {
 
-    setCategory_Products(data.products)
+    setCategory_Products(data)
 
   }, [data, cat_name])
 
@@ -30,10 +30,12 @@ function Cat_ProductsPage() {
     const filter = Category_Products.filter(c_product => {
       return c_product.title.toLowerCase().includes(text.toLowerCase());
     })
-    console.log('sflag', filter, searchFlag)
+   
     setFiltered(filter);
 
   }
+
+
 
   function handleSearch() {
 
@@ -78,9 +80,9 @@ function Cat_ProductsPage() {
         {
 
           searchFlag && text !== "" ? filtered.map(cat_prod => {
-            return <ProductCard key={cat_prod.id} cat_products={cat_prod} category={cat_name} />
+            return <ProductCard key={cat_prod._id} cat_products={cat_prod} category={cat_name} />
           }) : Category_Products && Category_Products.map(c_prod => {
-            return <ProductCard key={c_prod.id} cat_products={c_prod} category={cat_name} />
+            return <ProductCard key={c_prod._id} cat_products={c_prod} category={cat_name} />
           })
 
         }

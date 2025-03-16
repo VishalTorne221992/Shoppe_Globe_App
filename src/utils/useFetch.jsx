@@ -13,6 +13,7 @@ export function useFetch(url) {
 
           const response = await fetch(url);
           const res = await response.json();
+          
           setData(res)
           
         } catch (error) {
