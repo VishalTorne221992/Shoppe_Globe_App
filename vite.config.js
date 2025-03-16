@@ -8,4 +8,15 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  build: {
+    manifest: true,
+    rollupOptions: {
+      input: './src/main.jsx',
+    },
+  },
+  server: {
+    proxy: {
+      "/api": "https://shoppe-globe-app.onrender.com/",
+    },
+  },
 })

@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy":"https://shoppe-globe-app.onrender.com/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
