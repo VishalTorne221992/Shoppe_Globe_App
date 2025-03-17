@@ -30,7 +30,7 @@ app.use(passport.session())
 
 // add cors package to allow cors
 app.use(cors({ 
-    origin: "http://localhost:5173",
+    origin: true,
     credentials : true}));
 
 // connect mongoose to mongodb atlas using the connect method and a connection string obtained
