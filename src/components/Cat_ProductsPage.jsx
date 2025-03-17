@@ -15,7 +15,6 @@ function Cat_ProductsPage() {
 
   const { data, error } = useFetch(`http://localhost:4002/api/category/${cat_name}`);
 
- 
   useEffect(() => {
 
     setCategory_Products(data)
@@ -26,7 +25,7 @@ function Cat_ProductsPage() {
 
     setText(e.target.value)
     setSearchFlag(true)
-
+                                                                           
     const filter = Category_Products.filter(c_product => {
       return c_product.title.toLowerCase().includes(text.toLowerCase());
     })

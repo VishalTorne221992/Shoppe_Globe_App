@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --port 8080",
-    "start": "vite"
+    "start": "npm run start --prefix backend"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
