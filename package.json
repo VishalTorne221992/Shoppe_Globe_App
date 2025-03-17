@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k \"npm run server\" \"npm run start\"",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview --port 8080",
-    "start": "vite"
+    "preview": "vite preview --port 8000",
+    "start": "vite",
+    "server": "cd backend && npm start"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
