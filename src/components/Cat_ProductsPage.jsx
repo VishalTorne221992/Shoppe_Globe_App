@@ -13,7 +13,7 @@ function Cat_ProductsPage() {
   const [filtered, setFiltered] = useState(Category_Products);
   const [searchFlag, setSearchFlag] = useState(false);
 
-  const { data, error } = useFetch(`/api/category/${cat_name}`);
+  const { data, error } = useFetch(`http://localhost:4002/api/category/${cat_name}`);
 
  
   useEffect(() => {
