@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview --port 8000",
     "start": "vite",
-    "server": "cd backend && npm start"
+    "server": "npm start --prefix backend"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
