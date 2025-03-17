@@ -15,17 +15,8 @@ export default defineConfig({
     },
   },
   server: {
-    host: true,
-    strictPort: true,
-    port: 8000,
-    allowedHosts: true,
     proxy: {
-      '/foo': 'http://localhost:5173',
-      '/api': {
-        target: 'http://localhost:4002',
-        changeOrigin: true,
-        secure: false,
-      }
+      "/api": "http://localhost:4002",
     },
   },
 })
