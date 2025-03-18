@@ -63,7 +63,7 @@ function ProductCard(props) {
   
        try{
 
-        const res = await fetch('http://localhost:4002/api/cartAuth', requestAuthOptions)
+        const res = await fetch('https://shoppe-globe-app.onrender.com/api/cartAuth', requestAuthOptions)
         const data = await res.json()
         console.log('cart response', data)
         const { success, message, user} = data;
@@ -81,7 +81,7 @@ function ProductCard(props) {
     
         try{
           
-          const res = await fetch('http://localhost:4002/api/cart', requestOptions)
+          const res = await fetch('https://shoppe-globe-app.onrender.com/api/cart', requestOptions)
           const data = await res.json()
           
         }catch(err){
@@ -146,7 +146,7 @@ const LogoutAddItem = async (msg) => {
 
       try {
 
-      const res = await fetch('http://localhost:4002/api/logout', requestOptions)
+      const res = await fetch('https://shoppe-globe-app.onrender.com/api/logout', requestOptions)
       const data = await res.json();
       const { success, user} = data;
 
