@@ -62,5 +62,7 @@ app.listen(4002, () => {
 
 console.log("connected api")
 
+app.use('/', express.static('dist'))
+
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
