@@ -60,5 +60,7 @@ app.listen(PORT, () => {
     console.log("server is running on port 4002");
 })
 
+console.log("connected api")
+
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
