@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "npm run build",
     "lint": "eslint .",
     "preview": "vite preview --port 8000",
     "server":"cd backend && npm run start",
