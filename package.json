@@ -6,7 +6,7 @@
   "proxy":"https://shoppe-globe-app.onrender.com",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build",
+    "build": "vite build",
     "lint": "eslint .",
     "server" : "npm run start --prefix Backend",
     "preview": "vite preview --port 8000",
