@@ -2,7 +2,7 @@ import { config } from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
-import path from 'path'
+import { resolve , dirname } from 'path'
 import passport from 'passport'
 import User from "./Model/UserModel.js"
 import { routes } from './Routes/ShoppeGlobe_Routes.js';
@@ -70,10 +70,10 @@ console.log("connected api")
 
 if(process.env.NODE_ENV=="production"){
     
-    app.use(express.static(path.resolve(__dirname, "/dist")))
-    console.log(path.resolve(__dirname, "/dist/index.html"),'this is the path that needs to be resolved')
+    app.use(express.static(resolve(dirname, "/dist")))
+    console.log(path.resolve(dirname, "/dist/index.html"),'this is the path that needs to be resolved')
     app.get("/*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "dist", "index.html"))
+        res.sendFile(path.resolve(dirname, "dist", "index.html"))
     })
 }
 
