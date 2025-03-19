@@ -70,11 +70,9 @@ console.log("connected api")
 
 if(process.env.NODE_ENV=="production"){
 
-    app.use('/', express.static('dist'));
+    app.use('/*', express.static('dist'));
     
-    app.get("/*", (req, res) => {
-        res.sendFile(resolve("../dist", "index.html"))
-    })
+    
 }
 
 // created a separate routes file for all app route handling and authentication/authorization
