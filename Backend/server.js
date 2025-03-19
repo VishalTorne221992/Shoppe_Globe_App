@@ -71,7 +71,7 @@ if(process.env.NODE_ENV=="production"){
 
     app.use('/', express.static('../dist'));
 
-    console.log(__dirname)
+    console.log(dirname.name)
     
     app.get("/*", (req, res) => {
         res.sendFile(resolve("dist","index.html"))
