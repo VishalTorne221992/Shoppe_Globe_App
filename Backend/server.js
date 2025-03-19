@@ -68,12 +68,14 @@ console.log("connected api")
 //     res.send({message : "hello"})
 // })
 
-if(process.env.NODE_ENV=="production"){
 
-    app.use('/*', express.static('dist'));
+
+    app.use('/', express.static('dist'));
     
-    
-}
+    app.get("/*", (req, res) => {
+        res.sendFile(resolve("../dist", "index.html"))
+    })
+
 
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
