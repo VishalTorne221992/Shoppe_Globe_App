@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "server" : "npm install && npm run start --prefix Backend",
     "preview": "vite preview --port 4000",
-    "start": " concurrently \"npm run server\" \"npm run dev\" ",
+    "start": "npm run server",
     "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && vite build"
   },
   "dependencies": {
