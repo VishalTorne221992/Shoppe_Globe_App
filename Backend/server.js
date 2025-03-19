@@ -2,7 +2,7 @@ import { config } from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
-import { resolve } from 'path'
+import { dirname, resolve } from 'path'
 import passport from 'passport'
 import User from "./Model/UserModel.js"
 import { routes } from './Routes/ShoppeGlobe_Routes.js';
@@ -70,6 +70,8 @@ console.log("connected api")
 if(process.env.NODE_ENV=="production"){
 
     app.use('/', express.static('../dist'));
+
+    console.log(dirname)
     
     app.get("/*", (req, res) => {
         res.sendFile(resolve("dist","index.html"))
