@@ -8,8 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: "./",
   build: {
+      outDir: './dist',
+      assetsDir: './dist/assets',
       manifest: true,
       rollupOptions: {
            input: './src/main.jsx'    
