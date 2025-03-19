@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "server" : "npm run start --prefix Backend",
-    "preview": "vite preview --port 8000",
+    "server" : "npm install && npm run start --prefix Backend",
+    "preview": "vite preview --port 4000",
     "start": " concurrently \"npm run server\" \"npm run dev\" ",
     "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && vite build"
   },

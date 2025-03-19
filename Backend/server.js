@@ -54,14 +54,13 @@ db.on("error", () => {
 // run validators provided for the mongoose schema
 mongoose.set('runValidators', true)
 
-//let PORT = process.env.RENDER_PORT || 4002;
+let PORT = process.env.PORT || 4002;
 
-app.listen(4002, () => {
+app.listen(PORT, () => {
     console.log("server is running on port 4002");
 })
 
 console.log("connected api")
-
 
 
 // app.get('/', (req, res) => {
