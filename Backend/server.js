@@ -74,7 +74,7 @@ if(process.env.NODE_ENV=="production"){
     console.log(dirname.name)
     
     app.get("/*", (req, res) => {
-        res.sendFile(resolve("../dist/index.html"))
+        res.sendFile(resolve("../main.jsx"))
     })
 }
 
