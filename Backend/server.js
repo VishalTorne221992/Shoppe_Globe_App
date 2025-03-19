@@ -71,9 +71,9 @@ console.log("connected api")
 if(process.env.NODE_ENV=="production"){
     
     app.use(express.static(resolve(dirname, "/dist")))
-    console.log(path.resolve(dirname, "/dist/index.html"),'this is the path that needs to be resolved')
+    console.log(resolve(dirname, "/dist/index.html"),'this is the path that needs to be resolved')
     app.get("/*", (req, res) => {
-        res.sendFile(path.resolve(dirname, "dist", "index.html"))
+        res.sendFile(resolve(dirname, "dist", "index.html"))
     })
 }
 
