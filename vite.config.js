@@ -8,6 +8,12 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  build: {
+      manifest: true,
+      rollupOptions: {
+           input: './src/main.jsx'    
+      },      
+  },
   server: {
     host: true,
     port: 8080,
