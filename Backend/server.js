@@ -62,11 +62,20 @@ app.listen(4002, () => {
 
 console.log("connected api")
 
-app.use('/', express.static('dist'))
+
 
 // app.get('/', (req, res) => {
 //     res.send({message : "hello"})
 // })
+
+if(process.env.NODE_ENV=="production"){
+    const path = require('path')
+    app.use(express.static(path.resolve(__dirname, "/dist")))
+    console.log(path.resolve(__dirname, "/dist/index.html"),'this is the path that needs to be resolved')
+    app.get("/*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "dist", "index.html"))
+    })
+}
 
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
