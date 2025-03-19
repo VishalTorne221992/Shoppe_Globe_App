@@ -9,8 +9,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "server" : "npm run start --prefix Backend",
+    "client": "npm install",
     "preview": "vite preview --port 8000",
-    "start": " concurrently \"npm run server\" \" npm run dev\" "
+    "start": " concurrently \"npm run client\" \"npm run server\" \"npm run dev\" "
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
