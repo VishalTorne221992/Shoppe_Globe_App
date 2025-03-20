@@ -8,9 +8,9 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/Shoppe_Globe_App/',
+  base: '/',
   build: {
-      outDir: 'dist',
+      outDir: './dist',
       manifest: true,
       rollupOptions: {
            input: './src/main.jsx'    
