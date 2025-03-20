@@ -70,7 +70,7 @@ console.log("connected api")
 //     res.send({message : "hello"})
 // })
 
-serveStatic(app, express)
+//serveStatic(app, express)
 
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
