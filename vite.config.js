@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: './',
+  base: '/Shoppe_Globe_App/',
   build: {
       outDir: 'dist',
       manifest: true,
