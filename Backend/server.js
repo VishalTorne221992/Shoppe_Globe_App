@@ -7,7 +7,7 @@ import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
-import { serveStatic } from '../app.js';
+
 
 // create a express app
 const app = express();
