@@ -11,7 +11,7 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { fileURLToPath } from 'url';
 import path from 'node:path';
-import { serveStatic } from '../app.js';
+
 
 // create a express app
 const app = express();
