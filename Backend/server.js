@@ -2,9 +2,7 @@ import { config } from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
-import { dirname, resolve } from 'path'
 import passport from 'passport'
-import User from "./Backend/Model/UserModel.js"
 import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
