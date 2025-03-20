@@ -10,7 +10,7 @@
     "server" : "npm install && npm run start --prefix Backend",
     "preview": "vite preview --port 4000",
     "start": "npm run server",
-    "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build && npm run dev"
+    "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",

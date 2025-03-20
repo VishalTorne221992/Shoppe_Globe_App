@@ -4,14 +4,12 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import { dirname, resolve } from 'path'
 import passport from 'passport'
-import User from "./Model/UserModel.js"
-import { routes } from './Routes/ShoppeGlobe_Routes.js';
+import User from "./Backend/Model/UserModel.js"
+import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
-import { fileURLToPath } from 'url';
-import path from 'node:path';
-
+import { serveStatic } from '../app.js';
 
 // create a express app
 const app = express();
@@ -70,7 +68,7 @@ console.log("connected api")
 //     res.send({message : "hello"})
 // })
 
-//serveStatic(app, express)
+serveStatic(app, express);
 
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
