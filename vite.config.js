@@ -19,7 +19,7 @@ export default defineConfig({
   publicDir: 'assets',
   server: {
     host: true,
-    port: 8080,
+    port: 8000,
     allowedHosts: true,
     proxy: {
       '/api': {
