@@ -9,7 +9,9 @@ import { routes } from './Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
-
+import { fileURLToPath } from 'url';
+import path from 'node:path';
+'
 // create a express app
 const app = express();
 
@@ -69,9 +71,13 @@ console.log("connected api")
 
 if(process.env.NODE_ENV=="production"){
 
+    const filename = fileURLToPath(import.meta.url)
+
+    const dirname = path.dirname(filename)
+
     app.use('/', express.static('../dist'));
 
-    console.log(dirname.name)
+    console.log('directory path :',dirname)
     
     app.get("/*", (req, res) => {
         res.sendFile(resolve("../main.jsx"))
