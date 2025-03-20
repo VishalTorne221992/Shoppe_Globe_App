@@ -15,7 +15,7 @@ export function serveStatic(app, express){
         console.log('directory path :',dirname)
         
         app.get("/*", (req, res) => {
-            res.sendFile(resolve("index.html"))
+            res.sendFile(resolve(dirname+"index.html"))
         })
     }
 }
