@@ -11,7 +11,8 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import { fileURLToPath } from 'url';
 import path from 'node:path';
-'
+import { serveStatic } from '../app.js';
+
 // create a express app
 const app = express();
 
@@ -69,20 +70,7 @@ console.log("connected api")
 //     res.send({message : "hello"})
 // })
 
-if(process.env.NODE_ENV=="production"){
-
-    const filename = fileURLToPath(import.meta.url)
-
-    const dirname = path.dirname(filename)
-
-    app.use('/', express.static('../dist'));
-
-    console.log('directory path :',dirname)
-    
-    app.get("/*", (req, res) => {
-        res.sendFile(resolve("../main.jsx"))
-    })
-}
+serveStatic(app, express)
 
 // created a separate routes file for all app route handling and authentication/authorization
 routes(app, passport)
