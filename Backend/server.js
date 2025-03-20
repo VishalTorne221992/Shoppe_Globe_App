@@ -3,7 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
 import passport from 'passport'
-import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
+import { routes } from './Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
