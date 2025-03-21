@@ -18,7 +18,7 @@ export default defineConfig({
   },
   publicDir: 'assets',
   server: {
-    cors: { origin: "https://shoppe-globe-app.onrender.com"},
+    cors: { origin: "https://shoppe-globe.onrender.com"},
     host: true,
     port: 8000,
     allowedHosts: true,
