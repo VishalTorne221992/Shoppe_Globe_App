@@ -7,7 +7,7 @@ import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
-
+import { resolve } from 'path'
 
 // create a express app
 const app = express();
@@ -53,7 +53,7 @@ db.on("error", () => {
 // run validators provided for the mongoose schema
 mongoose.set('runValidators', true)
 
-let PORT = process.env.PORT || 4002;
+let PORT = 4002;
 
 app.listen(PORT, () => {
     console.log("server is running on port 4002");
@@ -62,9 +62,9 @@ app.listen(PORT, () => {
 console.log("connected api")
 
 
-// app.get('/', (req, res) => {
-//     res.send({message : "hello"})
-// })
+app.get('/', (req, res) => {
+    res.sendFile(resolve('/index.html'))
+})
 
 //serveStatic(app, express);
 
