@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "server" : "npm install && npm run start --prefix Backend",
+    "server" : "node server.js",
     "preview": "vite preview --port 4000",
     "start": "npm run server",
     "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
