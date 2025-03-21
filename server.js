@@ -7,8 +7,9 @@ import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
-import { resolve } from 'path'
-
+import { fileURLToPath } from 'url';
+import path from 'node:path'
+import { resolve } from 'node:path';
 // create a express app
 const app = express();
 
@@ -63,7 +64,11 @@ console.log("connected api")
 
 
 app.get('/', (req, res) => {
-    res.sendFile(resolve('/index.html'))
+    
+    const filename = fileURLToPath(import.meta.url)
+    const dirname = path.dirname(filename)
+
+    res.sendFile(resolve(dirname + '/index.html'))
 })
 
 //serveStatic(app, express);
