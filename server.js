@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
     
     const filename = fileURLToPath(import.meta.url)
     const dirname = path.dirname(filename)
-
+    app.use('/', express.static('dist'))
     res.sendFile(resolve(dirname + '/index.html'))
 })
 
