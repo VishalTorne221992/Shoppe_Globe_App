@@ -68,10 +68,10 @@ if(process.env.NODE_ENV == "production"){
         const filename = fileURLToPath(import.meta.url)
         const dirname = path.dirname(filename)
         
-        app.use(express.static(resolve(dirname,'dist')))
+        app.use(express.static(path.resolve(dirname,'dist')))
 
         app.get('/*', (req, res) => {    
-             res.sendFile(resolve(dirname,'dist', 'main.js'))
+             res.sendFile(path.resolve(dirname,'dist', 'assets', 'main.js'))
         })
 
 }
