@@ -54,7 +54,8 @@ db.on("error", () => {
 // run validators provided for the mongoose schema
 mongoose.set('runValidators', true)
 
-let PORT = 4002;
+// eslint-disable-next-line no-undef
+let PORT = process.env.PORT || 4002;
 
 app.listen(PORT, () => {
     console.log("server is running on port 4002");
@@ -71,7 +72,7 @@ if(process.env.NODE_ENV == "production"){
         app.use(express.static(path.resolve(dirname,'dist')))
 
         app.get('/*', (req, res) => {    
-             res.sendFile(path.resolve(dirname,'dist', 'assets', 'main.js'))
+             res.sendFile(path.resolve(dirname,'index.html'))
         })
 
 }
