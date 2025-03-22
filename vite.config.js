@@ -8,20 +8,13 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '',
   build: {
-      outDir: './dist',
-      assetsDir: 'assets',
-      manifest: true,
-      rollupOptions: {
-           input: './src/main.jsx'    
-      },      
+      outDir: 'dist',
+      manifest: true    
   },
-  publicDir: 'assets',
   server: {
-    cors: { origin: "https://shoppe-globe.onrender.com"},
     host: true,
-    port: 8000,
+    port: 8080,
     allowedHosts: true,
     proxy: {
       '/api': {
@@ -32,7 +25,7 @@ export default defineConfig({
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
             console.log('proxy error', err);
-          });;
+          });
           proxy.on('proxyReq', (proxyReq, req, _res) => {
             console.log('Sending Request to the Target:', req.method, req.url);
           });
