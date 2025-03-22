@@ -77,8 +77,6 @@ if(process.env.NODE_ENV == "production"){
 
 }
 
-
-
 //serveStatic(app, express);
 
 // created a separate routes file for all app route handling and authentication/authorization
