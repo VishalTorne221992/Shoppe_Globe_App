@@ -18,8 +18,6 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://shoppe-globe-app.onrender.com',
-        changeOrigin: true,
-        secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
