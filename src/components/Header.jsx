@@ -157,7 +157,7 @@ function Header() {
      }
 
      try{
-      const res = await fetch('/api/login', requestOptions)
+      const res = await fetch('http://localhost:4002/api/login', requestOptions)
       const data = await res.json();
       
       
@@ -195,7 +195,7 @@ function Header() {
        }
   
        try{
-        const res = await fetch('/api/cartAuth', requestOptions)
+        const res = await fetch('http://localhost:4002/api/cartAuth', requestOptions)
         const data = await res.json()
         console.log('cart response', data)
         const { success, message, user} = data;

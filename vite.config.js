@@ -10,11 +10,10 @@ export default defineConfig({
   ],
   build: {
       outDir: 'dist',
-      manifest: true    
+      manifest: true,    
   },
   server: {
     host: true,
-    port: 8080,
     allowedHosts: true,
     proxy: {
       '/api': {
