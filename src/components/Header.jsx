@@ -114,7 +114,7 @@ function Header() {
      }
 
      try{
-      const res = await fetch('/api/register', requestOptions)
+      const res = await fetch('https://shoppe-globe-app.onrender.com/api/register', requestOptions)
       const data = await res.json();
       console.log('data',data)
       const { success, message } = data
@@ -157,7 +157,7 @@ function Header() {
      }
 
      try{
-      const res = await fetch('/api/login', requestOptions)
+      const res = await fetch('https://shoppe-globe-app.onrender.com/api/login', requestOptions)
       const data = await res.json();
       
       
@@ -195,7 +195,7 @@ function Header() {
        }
   
        try{
-        const res = await fetch('/api/cartAuth', requestOptions)
+        const res = await fetch('https://shoppe-globe-app.onrender.com/api/cartAuth', requestOptions)
         const data = await res.json()
         console.log('cart response', data)
         const { success, message, user} = data;
@@ -240,7 +240,7 @@ function Header() {
 
        try{
         
-        const res = await fetch('/api/logout', requestOptions)
+        const res = await fetch('https://shoppe-globe-app.onrender.com/api/logout', requestOptions)
         const data = await res.json();
       
         const { success, message, userID, user} = data;
@@ -294,7 +294,7 @@ function Header() {
  
        try {
 
-        const res = await fetch('/api/logoutSession', requestOptions)
+        const res = await fetch('https://shoppe-globe-app.onrender.com/api/logoutSession', requestOptions)
         const data = await res.json();
         const { success, user} = data;
 

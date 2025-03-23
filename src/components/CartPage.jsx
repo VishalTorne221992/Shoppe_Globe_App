@@ -38,7 +38,7 @@ function CartPage() {
        }
 
       try {
-        const res = await fetch('/api/checkoutAuth', requestOptions)
+        const res = await fetch('https://shoppe-globe-app.onrender.com/api/checkoutAuth', requestOptions)
         const data = await res.json()
         
         const { success, message, user} = data;
@@ -77,7 +77,7 @@ function CartPage() {
   
          try {
   
-          const res = await fetch('/api/logoutSession', requestOptions)
+          const res = await fetch('https://shoppe-globe-app.onrender.com/api/logoutSession', requestOptions)
           const data = await res.json();
           const { success, user} = data;
   

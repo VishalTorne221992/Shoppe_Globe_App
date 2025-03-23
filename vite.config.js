@@ -1,19 +1,23 @@
 import { defineConfig } from 'vite'
+import { config } from 'dotenv';
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
+config();
+
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+      // eslint-disable-next-line no-undef
+      'process.env': process.env
+  },
   plugins: [
     react(),
     tailwindcss()
   ],
   build: {
       outDir: 'dist',
-      manifest: true,
-      rollupOptions:{
-        input: './src/main.jsx'
-      }
+      manifest: true
   },
   server: {
     host: true,
@@ -21,10 +25,9 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'https://shoppe-globe-app.onrender.com',
+        target: 'http://localhost:4002',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
             console.log('proxy error', err);

@@ -36,7 +36,7 @@ function CartItem(props) {
     }
 
     try {
-      const res = await fetch(`/api/cart/${props.Cart.id}`, requestOptions)
+      const res = await fetch(`https://shoppe-globe-app.onrender.com/api/cart/${props.Cart.id}`, requestOptions)
       const data = await res.json();
       console.log('update inc response data', data)
     } catch (error) {
@@ -74,7 +74,7 @@ function CartItem(props) {
       }
 
       try {
-        const res = await fetch(`/api/cart/${props.Cart.id}`, requestOptions)
+        const res = await fetch(`https://shoppe-globe-app.onrender.com/api/cart/${props.Cart.id}`, requestOptions)
         const data = await res.json();
         console.log('update dec less than 1 response data', data)
       } catch (error) {
@@ -103,7 +103,7 @@ function CartItem(props) {
       }
 
       try {
-        const res = await fetch(`http://localhost:4002/api/cart/${props.Cart.id}`, requestOptions)
+        const res = await fetch(`https://shoppe-globe-app.onrender.com/api/cart/${props.Cart.id}`, requestOptions)
         const data = await res.json();
         console.log('update dec response data', data)
       } catch (error) {
@@ -142,7 +142,7 @@ function CartItem(props) {
     }
 
     try {
-      const res = await fetch(`http://localhost:4002/api/cart/${props.Cart.id}`, requestOptions)
+      const res = await fetch(`https://shoppe-globe-app.onrender.com/api/cart/${props.Cart.id}`, requestOptions)
       const data = await res.json();
       console.log('update dec response data', data)
     } catch (error) {
