@@ -55,7 +55,7 @@ db.on("error", () => {
 mongoose.set('runValidators', true)
 
 // eslint-disable-next-line no-undef
-let PORT = process.env.PORT || 4002;
+let PORT = import.meta.env.PORT || 4002;
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
