@@ -21,11 +21,10 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: 8080,
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:4002',
+        target: 'https://shoppe-globe-app.onrender.com',
         changeOrigin: true,
         secure: false,
         configure: (proxy, _options) => {
