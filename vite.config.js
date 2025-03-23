@@ -8,9 +8,9 @@ config();
 // https://vite.dev/config/
 export default defineConfig({
   define: {
-      // eslint-disable-next-line no-undef
-      'process.env': process.env
-  },
+    // eslint-disable-next-line no-undef
+    'process.env': process.env
+},
   plugins: [
     react(),
     tailwindcss()
@@ -21,13 +21,14 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port:8080,
+    port: 8080,
     allowedHosts: true,
     proxy: {
       '/api': {
         target: 'https://shoppe-globe-app.onrender.com',
         changeOrigin: true,
         secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
             console.log('proxy error', err);
