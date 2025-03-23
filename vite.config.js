@@ -10,14 +10,20 @@ export default defineConfig({
   ],
   build: {
       outDir: 'dist',
-      manifest: true,    
+      manifest: true,
+      rollupOptions:{
+        input: './src/main.jsx'
+      }
   },
   server: {
     host: true,
+    port: 8080,
     allowedHosts: true,
     proxy: {
       '/api': {
         target: 'https://shoppe-globe-app.onrender.com',
+        changeOrigin: true,
+        secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
