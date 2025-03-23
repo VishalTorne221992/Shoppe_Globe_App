@@ -25,8 +25,8 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'http://localhost:4002',
-        changeOrigin: true,
-        secure: false,
+        // changeOrigin: true,
+        // secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
