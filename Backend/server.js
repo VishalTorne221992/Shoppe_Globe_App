@@ -3,7 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors'
 import passport from 'passport'
-import { routes } from './Backend/Routes/ShoppeGlobe_Routes.js';
+import { routes } from './Routes/ShoppeGlobe_Routes.js'
 import flash from 'express-flash';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
@@ -12,6 +12,8 @@ import path from 'node:path'
 import { resolve } from 'node:path';
 // create a express app
 const app = express();
+
+config();
 
 // use neccessary packages for parsing json, cookie and using session in the app. 
 app.use(cookieParser());
@@ -35,7 +37,20 @@ app.use(cors({
 
 // connect mongoose to mongodb atlas using the connect method and a connection string obtained
 // by creating a database in mongodb atlas
-mongoose.connect("mongodb+srv://vt221992:ZQ11v9dnIzLJLUZZ@shoppeglobecl.nh3up.mongodb.net/ShoppeGlobeDB")
+async function connectToDB(){
+    try {
+        const mongooseOptions ={
+            useNewUrlParser: true,
+            connectTimeoutMS : 40000
+        };
+        await mongoose.connect("mongodb+srv://vt221992:ZQ11v9dnIzLJLUZZ@shoppeglobecl.nh3up.mongodb.net/ShoppeGlobeDB", mongooseOptions);
+        console.log('Connected to mongoDB');
+    } catch (error) {
+        console.log('error connecting mongodb',error);
+    }
+}
+connectToDB();
+
 
 // get connection
 const db = mongoose.connection;
@@ -54,8 +69,8 @@ db.on("error", () => {
 // run validators provided for the mongoose schema
 mongoose.set('runValidators', true)
 
-// eslint-disable-next-line no-undef
-let PORT = 4002;
+
+let PORT = process.env.PORT || 4002;
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
@@ -64,18 +79,18 @@ app.listen(PORT, () => {
 console.log("connected api")
 
 // eslint-disable-next-line no-undef
-if(process.env.NODE_ENV == "production"){
+// if(process.env.NODE_ENV == "production"){
 
-        const filename = fileURLToPath(import.meta.url)
-        const dirname = path.dirname(filename)
+//         const filename = fileURLToPath(import.meta.url)
+//         const dirname = path.dirname(filename)
         
-        app.use(express.static(path.resolve(dirname,'dist')))
+//         app.use(express.static(path.resolve(dirname,'dist')))
 
-        app.get('/*', (req, res) => {    
-             res.sendFile(path.resolve(dirname,'index.html'))
-        })
+//         app.get('/*', (req, res) => {    
+//              res.sendFile(path.resolve(dirname,'index.html'))
+//         })
 
-}
+// }
 
 //serveStatic(app, express);
 
