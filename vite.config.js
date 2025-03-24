@@ -20,11 +20,13 @@ export default defineConfig({
       manifest: true
   },
   server: {
+    cors: { origin: 'https://shoppe-globe.onrender.com'},
+    port: 8080,
     host: true,
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:4002',
+        target: 'http://localhost:10000',
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {
             console.log('proxy error', err);
