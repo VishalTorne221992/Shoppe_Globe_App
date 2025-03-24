@@ -63,7 +63,7 @@ function ProductCard(props) {
   
        try{
 
-        const res = await fetch('/api/cartAuth', requestAuthOptions)
+        const res = await fetch('https://shoppe-globe-app.onrender.com/api/cartAuth', requestAuthOptions)
         const data = await res.json()
         console.log('cart response', data)
         const { success, message, user} = data;
@@ -81,7 +81,7 @@ function ProductCard(props) {
     
         try{
           
-          const res = await fetch('/api/cart', requestOptions)
+          const res = await fetch('https://shoppe-globe-app.onrender.com/api/cart', requestOptions)
           const data = await res.json()
           
         }catch(err){

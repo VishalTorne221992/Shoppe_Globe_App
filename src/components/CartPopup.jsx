@@ -41,7 +41,7 @@ export const CartPopup = () => {
            }
     
           try {
-            const res = await fetch('/api/cartAuth', requestOptions)
+            const res = await fetch('https://shoppe-globe-app.onrender.com/api/cartAuth', requestOptions)
             const data = await res.json()
             console.log('cart popup response', data)
             const { success, message, user} = data;
