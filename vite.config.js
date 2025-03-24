@@ -20,7 +20,7 @@ export default defineConfig({
       manifest: true
   },
   server: {
-    cors: { origin: 'https://shoppe-globe.onrender.com'},
+    cors: { origin: 'https://shoppe-globe-app.onrender.com'},
     port: 8080,
     host: true,
     allowedHosts: true,
