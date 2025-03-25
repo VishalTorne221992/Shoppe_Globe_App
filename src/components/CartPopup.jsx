@@ -79,7 +79,7 @@ export const CartPopup = () => {
     
            try {
     
-            const res = await fetch('/api/logout', requestOptions)
+            const res = await fetch('https://shoppe-globe-app.onrender.com/api/logout', requestOptions)
             const data = await res.json();
             const { success, user} = data;
     
